@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For P'moodeng 💜</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Caveat:wght@700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg1: #1a0033;
+            --bg2: #3a0066;
+            --main: #d291ff;
+            --soft: #f8dcff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Kanit', sans-serif;
+            background: radial-gradient(circle at center, var(--bg2), var(--bg1));
+            color: white;
+            overflow-y: auto;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        #lockScreen {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #2a0050, #000);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        input {
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            text-align: center;
+            margin-top: 10px;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            background: var(--main);
+            color: white;
+            cursor: pointer;
+            margin: 15px;
+            font-family: 'Kanit', sans-serif;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(210, 145, 255, 0.3);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #e0b3ff;
+        }
+
+        .page {
+            display: none;
+            padding: 40px 20px;
+            min-height: 100vh;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px 30px;
+            border-radius: 35px;
+            background: rgba(255, 255, 255, .1);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 60px rgba(210, 145, 255, .4);
+        }
+
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--soft));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .poem-box {
+            margin-top: 20px;
+            padding: 30px;
+            border-radius: 25px;
+            background: rgba(0, 0, 0, .35);
+            line-height: 2;
+            font-size: 1.05rem;
+            text-align: left;
+            white-space: pre-line;
+            border: 1px solid rgba(255, 255, 255, .2);
+            box-shadow: 0 0 25px rgba(210, 145, 255, .4);
+        }
+
+        canvas {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="always.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="lockScreen">
+        <h2 style="font-family:Caveat;font-size:3rem;">Enter The Secret 💜</h2>
+        <p>Hint: วันเฉลยสายรหัส</p>
+        <input type="password" id="passInput" placeholder="ใส่รหัส...">
+        <button onclick="checkPass()">เข้าอ่าน 💌</button>
+        <p id="error" style="color:#ff9;"></p>
+    </div>
+
+    <div id="page1" class="page">
+        <div class="container">
+            <h1>P'moodeng 💜</h1>
+            <div style="margin-top:10px; line-height:2; font-size: 1.1rem;">
+                จบม.6เเล้วน้าา ไวมากเลย เเป๊บๆพวกพี่ ๆ จบกันหมดเเระ น้องเทคคิดถึงเเย่
+                ยังไงก็ขอให้พี่เจอเเต่สิ่งดีๆต่อจากนี้ ทุกความทรงจำที่อยู่ที่นี่
+                อะไรก็ตามที่ไม่อยากเก็บก็เเค่ไม่นึกถึงมัน
+                อะไรที่อยากให้นึกถึงมันตอนที่คิดถึงอะไรบางสิ่ง
+                ดีใจมากเลยที่ได้เจอพี่ ได้เป็นน้องรหัสพี่ด้วย
+                วันเเรกที่พี่ฟอลมาทั้งตกใจทั้งกลัวยอดฟอลฟมื่นกว่า ฟอลผิดหรือมาหาเรื่องเราเปล่าวะ 5555
+                มีขนมให้บ่อย ๆ พร้อมกับโน็ตที่น่ารัก ๆ ทุกครั้งที่ให้
+                พอได้คุยกับพี่ เลยรู้สึกว่าพี่เป็นคนที่ตลกกว่าที่คิด เป็นคนพลังบวกเยอะดี
+                เเต่ก็ขอให้ต่อไปนี้ขอให้ใช้ชีวิตให้มีความสุขเสมอ ๆ ไม่มีเรื่องเครียด พูดหวานไม่เป็น เเต่ห่วงตลอดนะ 💜💜
+            </div>
+            <button onclick="showPoem()">อ่านต่อ ➡️</button>
+        </div>
+    </div>
+
+    <div id="page2" class="page">
+        <div class="container">
+            <div class="poem-box">
+                บทเก่าปิดลงอย่างงดงาม
+                บทใหม่กำลังรอให้พี่เขียนมันด้วยตัวของพี่เอง
+                ยิ้มให้กับสิ่งที่ผ่านมาเเล้วผ่านไป
+                กล้ารับมือกับสิ่งที่กำลังจะมา
+                รักตัวเองให้มาก
+                เลือกสิ่งที่ดีที่สุดให้กับชีวิต
+
+                และขอให้ทุกเส้นทางใหม่
+                พาพี่ไปเจอความสุขที่พี่คู่ควรจะได้รับมันอย่างเสมอมา
+
+                อย่ากลัวอนาคตที่จะมาถึง
+                ไม่ว่าจะเกิดอะไรขึ้น
+                เดี๋ยวก็จะผ่านไปเหมือนครั้งก่อน ๆ เอง.... :)
+            </div>
+            <button onclick="backToMessage()">⬅️ ย้อนกลับ</button>
+        </div>
+    </div>
+
+    <canvas id="stars"></canvas>
+
+    <script>
+        function checkPass() {
+            const pass = document.getElementById("passInput").value;
+            const lock = document.getElementById("lockScreen");
+            const p1 = document.getElementById("page1");
+            const err = document.getElementById("error");
+            const music = document.getElementById("bgMusic");
+
+            if (pass === "190825") {
+                lock.style.display = "none";
+                p1.style.display = "block";
+
+                // สั่งเล่นไฟล์เสียง always.mp3
+                music.play().catch(function (error) {
+                    console.log("Autoplay was prevented. Click the page to play music.");
+                });
+            } else {
+                err.innerText = "รหัสไม่ถูกน้า 💭";
+            }
+        }
+
+        function showPoem() {
+            document.getElementById("page1").style.display = "none";
+            document.getElementById("page2").style.display = "block";
+            window.scrollTo(0, 0);
+        }
+
+        function backToMessage() {
+            document.getElementById("page2").style.display = "none";
+            document.getElementById("page1").style.display = "block";
+            window.scrollTo(0, 0);
+        }
+
+        // Stars Background
+        const canvas = document.getElementById("stars");
+        const ctx = canvas.getContext("2d");
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.onresize = resize;
+        resize();
+
+        let stars = [];
+        for (let i = 0; i < 200; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                r: Math.random() * 1.5,
+                v: Math.random() * 0.5
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+            stars.forEach(s => {
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fill();
+                s.y -= s.v;
+                if (s.y < 0) s.y = canvas.height;
+            });
+            requestAnimationFrame(draw);
+        }
+        draw();
+    </script>
+
+</body>
+
+</html>
